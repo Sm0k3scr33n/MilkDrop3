@@ -1,3 +1,7 @@
+// This file is the Windows standalone entry point.
+// On macOS the entry point is macos/app/main.mm + AppDelegate.mm.
+#ifndef MILKDROP_MACOS
+
 #ifdef DEBUG
 #define _CRTDBG_MAP_ALLOC
 #endif
@@ -803,6 +807,9 @@ struct _DEBUG_STATE {
         _CrtDumpMemoryLeaks();
     }
 };
+
+#endif // !MILKDROP_MACOS
+
 
 _DEBUG_STATE ds;
 #endif

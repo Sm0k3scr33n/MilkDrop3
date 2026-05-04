@@ -30,7 +30,12 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef __NULLSOFT_DX9_PLUGIN_SHELL_SHELL_DEFINES_H__
 #define __NULLSOFT_DX9_PLUGIN_SHELL_SHELL_DEFINES_H__ 1
 
-#include <windows.h>
+#ifdef MILKDROP_MACOS
+  #include "../../macos/platform/win32_compat.h"
+  #include "../../macos/platform/d3d_compat.h"
+#else
+  #include <windows.h>
+#endif
 
 #define DEFAULT_FULLSCREEN_WIDTH  640
 #define DEFAULT_FULLSCREEN_HEIGHT 480

@@ -30,13 +30,18 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef __NULLSOFT_DX9_PLUGIN_SHELL_UTILITY_H__
 #define __NULLSOFT_DX9_PLUGIN_SHELL_UTILITY_H__ 1
 
-#include <windows.h>
-#include <crtdefs.h>
-#include <d3d9.h>
-#include <d3dx9.h>
+#ifdef MILKDROP_MACOS
+  // win32_compat.h + d3d_compat.h are pulled in via shell_defines.h → dxcontext.h
+  // Nothing extra needed here.
+#else
+  #include <windows.h>
+  #include <crtdefs.h>
+  #include <d3d9.h>
+  #include <d3dx9.h>
+#endif
 
 #define SafeRelease(x) { if (x) {x->Release(); x=NULL;} }
-#define SafeDelete(x) { if (x) {delete x; x=NULL;} }
+#define SafeDelete(x)  { if (x) {delete x;     x=NULL;} }
 #define IsNullGuid(lpGUID) ( ((int*)lpGUID)[0]==0 && ((int*)lpGUID)[1]==0 && ((int*)lpGUID)[2]==0 && ((int*)lpGUID)[3]==0 )
 #define DlgItemIsChecked(hDlg, nIDDlgItem) ((SendDlgItemMessage(hDlg, nIDDlgItem, BM_GETCHECK, (WPARAM) 0, (LPARAM) 0) == BST_CHECKED) ? true : false)
 #define CosineInterp(x) (0.5f - 0.5f*cosf((x) * 3.1415926535898f))

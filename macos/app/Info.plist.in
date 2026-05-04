@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>MilkDrop3</string>
+    <key>CFBundleDisplayName</key>
+    <string>MilkDrop 3</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.milkdrop2077.milkdrop3</string>
+    <key>CFBundleVersion</key>
+    <string>@PROJECT_VERSION@</string>
+    <key>CFBundleShortVersionString</key>
+    <string>@PROJECT_VERSION@</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleExecutable</key>
+    <string>MilkDrop3</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+    <!-- Audio capture permission (required for ScreenCaptureKit) -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>MilkDrop 3 needs audio access to visualize system audio.</string>
+    <!-- Screen recording permission (required for ScreenCaptureKit audio loopback) -->
+    <key>NSScreenCaptureDescription</key>
+    <string>MilkDrop 3 uses screen capture to access system audio output.</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.music</string>
+</dict>
+</plist>

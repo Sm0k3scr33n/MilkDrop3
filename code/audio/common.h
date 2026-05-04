@@ -1,6 +1,8 @@
 // common.h
 
 #include <stdio.h>
+
+#ifndef MILKDROP_MACOS
 #include <windows.h>
 #include <mmsystem.h>
 #include <mmdeviceapi.h>
@@ -14,3 +16,7 @@
 #include "prefs.h"
 #include "loopback-capture.h"
 #include "audiobuf.h"
+#else
+// On macOS audio capture is handled by CoreAudioCapture.mm
+#include <mutex>
+#endif
